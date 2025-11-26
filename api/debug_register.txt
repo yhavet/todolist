@@ -1,0 +1,2 @@
+2025-11-07T04:47:35+01:00 RAW: {"username":"Yhavet","email":"yhavetalanizzz@gmail.com","password":"Mandarinas123"}
+2025-11-07T04:47:35+01:00 DB ERROR: SQLSTATE[HY000] [1045] Access denied for user 'tu_usuario'@'localhost' (using password: YES)

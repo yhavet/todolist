@@ -1,0 +1,427 @@
+/* style.css (Diseño Minimalista Apple para la App) */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+                 Helvetica, Arial, sans-serif, "Apple Color Emoji", 
+                 "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: #f5f5f7; 
+    margin: 0;
+    padding: 0;
+    color: #1d1d1f;
+}
+.is-hidden { display: none !important; }
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #f5f5f7;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+.user-profile { display: flex; align-items: center; gap: 12px; }
+.avatar {
+    width: 44px;
+    height: 44px;
+    background-color: #007aff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+.user-details { display: flex; flex-direction: column; }
+.username { font-size: 18px; font-weight: 600; color: #1d1d1f; }
+.status { display: flex; align-items: center; gap: 5px; font-size: 14px; color: #6e6e73; }
+.status-dot { width: 10px; height: 10px; background-color: #34c759; border-radius: 50%; }
+#logout-btn {
+    background: #ff3b30;
+    padding: 8px 14px;
+    font-size: 14px;
+    width: auto;
+    flex-shrink: 0;
+}
+#logout-btn:hover { background: #e03024; }
+.current-text {
+    text-align: left;
+    color: #1d1d1f;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    margin-top: 20px; 
+}
+#current-date {
+    text-align: left;
+    color: #6e6e73; 
+    margin-top: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #e5e5ea;
+    padding-bottom: 20px;
+}
+
+/* Estilo de los botones PRIMARIOS (Azules) */
+button {
+    padding: 12px 18px;
+    border: none;
+    background: #007aff; 
+    color: #fff;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: inherit;
+    width: 100%;
+}
+button:hover { background: #0070e0; }
+
+/* ===== SECCIÓN MODIFICADA ===== */
+/* Estilo de los botones SECUNDARIOS (Grises) */
+#export-btn,
+#view-toggle-btn,
+#toggle-inputs,      /* <-- AÑADIDO */
+#toggle-meeting-btn  /* <-- AÑADIDO */
+{
+    margin-top: 20px;
+    background: #e5e5ea; /* Gris */
+    color: #007aff;      /* Texto azul */
+    font-weight: 500;
+}
+#export-btn:hover,
+#view-toggle-btn:hover,
+#toggle-inputs:hover,     /* <-- AÑADIDO */
+#toggle-meeting-btn:hover /* <-- AÑADIDO */
+{
+    background: #dcdce0; /* Gris más oscuro al pasar el mouse */
+}
+/* Espaciado de los botones de toggle */
+#toggle-inputs {
+    margin-top: 20px;
+}
+#toggle-meeting-btn {
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+#view-toggle-btn { 
+    margin-bottom: -10px; 
+}
+/* ===== FIN DE SECCIÓN MODIFICADA ===== */
+
+
+.task-input,
+.meeting-input { /* Aplicar a ambos formularios */
+    padding: 20px;
+    background: #f5f5f7;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+/* (NUEVO) Esta regla oculta los formularios por defecto */
+.task-input.hidden,
+.meeting-input.hidden {
+    display: none;
+    margin-bottom: 0;
+}
+
+/* Estilo de los inputs y textarea */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px 0;
+    border-radius: 8px;
+    border: none; 
+    background-color: #fff; 
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: inherit;
+    color: #1d1d1f;
+}
+
+textarea { resize: vertical; min-height: 100px; }
+.input-row { display: flex; gap: 15px; }
+.input-row > * { flex: 1; }
+.time-inputs { display: flex; justify-content: space-between; gap: 15px; margin: 8px 0 15px 0; }
+.time-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #fff; 
+  box-sizing: border-box;
+}
+.time-group label { color: #6e6e73; font-weight: 500; font-size: 15px; }
+.time-group input[type="time"] {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  flex: 1;
+  font-size: 16px;
+  font-family: inherit;
+  color: #1d1d1f;
+}
+.task-list { display: block; margin-top: 20px; }
+.task-category {
+    width: 100%;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+    transition: none;
+    margin-bottom: 20px;
+}
+.task-category:hover { transform: none; }
+.task-category h2 {
+    font-weight: 600;
+    color: #1d1d1f;
+    border-bottom: 2px solid #e5e5ea; 
+    padding-bottom: 10px;
+}
+.tasks {
+    padding: 10px;
+    background: #f5f5f7; 
+    border-radius: 8px;
+    min-height: 200px;
+}
+.task {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+.task.completed { background-color: #fdfdfd; opacity: 0.7; }
+.task.completed .task-details > * { text-decoration: line-through; color: #8a8a8e; }
+.task h3 { font-size: 18px; margin: 0 0 10px; color: #1d1d1f; }
+.task p { font-size: 14px; color: #6e6e73; margin: 5px 0; }
+.task .icons { display: flex; gap: 8px; }
+.task .icons button {
+    background: #e5e5ea;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #007aff;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.task .icons button.delete-task,
+.task .icons button.permanent-delete-btn { color: #ff3b30; }
+.task .icons button:hover { background: #dcdce0; }
+.task.completed .icons .complete-task { display: none; }
+.task.completed .icons .delete-task { display: none; }
+.task:not(.completed) .icons .permanent-delete-btn { display: none; }
+.task-time {
+    font-size: 14px;
+    color: #1d1d1f;
+    font-weight: 500;
+    margin-top: 8px;
+    background-color: #f5f5f7;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* --- ESTILOS PARA REUNIONES --- */
+.meeting-list {
+    width: 100%;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.meeting-list h2 {
+    font-weight: 600;
+    color: #1d1d1f;
+    border-bottom: 2px solid #e5e5ea; 
+    padding-bottom: 10px;
+}
+.meetings {
+    padding: 10px;
+    background: #f5f5f7; 
+    border-radius: 8px;
+    min-height: 50px;
+}
+.meeting-card {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.meeting-card .details h3 { font-size: 18px; margin: 0 0 10px; color: #1d1d1f; }
+.meeting-card .details p { font-size: 14px; color: #6e6e73; margin: 5px 0; }
+.meeting-card .actions button {
+    background: #e5e5ea;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ff3b30;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.meeting-card .actions button:hover { background: #dcdce0; }
+
+/* ... (Todo tu CSS anterior va aquí) ... */
+
+/* (NUEVO) Estilo para el contenedor de Horas y Minutos */
+.duration-inputs {
+    display: flex;
+    gap: 15px;
+    flex: 1; /* Ocupa el espacio al lado de la fecha */
+}
+
+/* ================= RESPONSVIE MEDIA QUERIES (solo ajustes móviles/tablet) ================= */
+
+/* Tablet: ajustes suaves (<= 900px) */
+@media (max-width: 900px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+  .header-bar {
+    padding: 12px;
+    border-radius: 10px;
+  }
+  .task-list { margin-top: 16px; }
+  .tasks { min-height: 150px; padding: 10px; }
+  .meeting-list { margin-bottom: 16px; }
+}
+
+/* Mobile: apilar y facilitar uso con pulgar (<= 600px) */
+@media (max-width: 600px) {
+  /* Header en columna para no apretar avatar y botón */
+  .header-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Perfil: alinear bien en móvil */
+  .user-profile {
+    gap: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  .username { font-size: 15px; }
+  .status { font-size: 13px; }
+
+  /* Mantener botones full-width (como tenías) y asegurarlos en columna */
+  #logout-btn,
+  #export-btn,
+  #view-toggle-btn,
+  #toggle-inputs,
+  #toggle-meeting-btn,
+  button {
+    width: 100%;
+    display: block;
+  }
+
+  /* Formularios: inputs apilados */
+  .input-row { flex-direction: column; gap: 12px; }
+  .time-inputs { flex-direction: column; gap: 12px; }
+  .time-group { padding: 10px; }
+
+  /* Tareas / reuniones: tarjetas apiladas y contenido en columna */
+  .tasks, .meetings {
+    display: block;
+    padding: 8px;
+  }
+  .task, .meeting-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  /* Íconos: que no se amontonen, se alinean a la derecha */
+  .task .icons, .meeting-card .actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  /* Ajustes de texto */
+  .current-text { font-size: 18px; }
+  #current-date { font-size: 16px; padding-bottom: 16px; }
+
+  /* Contenedor más compacto en móvil */
+  .container { padding: 16px; border-radius: 10px; }
+}
+
+/* Teléfonos muy pequeños: ajuste fino (<= 420px) */
+@media (max-width: 420px) {
+  .avatar { width: 32px; height: 32px; font-size: 14px; }
+  .username { font-size: 14px; }
+  .current-text { font-size: 16px; }
+  .task h3 { font-size: 16px; }
+  .task p, .meeting-card .details p { font-size: 13px; }
+  .time-group label { font-size: 13px; }
+  .task .icons button, .meeting-card .actions button { width: 40px; height: 40px; }
+}
+
+/* Pantallas medianas: grid lateral si hay espacio (601 - 900) */
+@media (min-width: 601px) and (max-width: 900px) {
+  .tasks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    padding: 10px;
+  }
+  .task { margin-bottom: 0; }
+  .meetings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+}
+
+/* Accesibilidad: reducir movimiento si la preferencia está activada */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Asegurar que los formularios ocultos no rompan layout en móvil */
+.task-input.hidden,
+.meeting-input.hidden { display: none !important; height: 0; padding: 0; margin: 0; }
+
+/* =========================================================================================== */

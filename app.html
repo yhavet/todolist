@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMaster</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+<div class="container">
+    
+    <div class="header-bar">
+        <div class="user-profile">
+            <div class="avatar">
+                <span id="avatar-letter"></span> 
+            </div>
+            <div class="user-details">
+                <span id="user-greeting" class="username"></span> 
+                <div class="status">
+                    <span class="status-dot"></span>
+                    Conectado
+                </div>
+            </div>
+        </div>
+        <button id="logout-btn">Cerrar Sesión</button>
+    </div>
+    
+    <h2 class="current-text"> ¿Listo para planear tu día?</h2>
+    <p id="current-date"></p>
+
+    <button id="toggle-meeting-btn">+ Añadir Reunión (Daily/Call)</button>
+    
+    <div class="meeting-input hidden">
+      <input type="text" id="meeting-title" placeholder="Título de la reunión">
+      <textarea id="meeting-notes" placeholder="Notas de la reunión..."></textarea>
+      
+      <div class="input-row">
+        <input type="date" id="meeting-date">
+        
+        <div class="duration-inputs">
+            <input type="number" id="meeting-hours" placeholder="Horas" min="0">
+            <input type="number" id="meeting-minutes" placeholder="Minutos" min="0" max="59">
+        </div>
+      </div>
+      
+      <button id="add-meeting-btn">Añadir Reunión</button>
+    </div>
+    <div class="meeting-list">
+        <h2>Dailies y Calls de Hoy</h2>
+        <div class="meetings" id="meetings-container">
+            </div>
+    </div>
+    
+    <button id="toggle-inputs">+ Crear nueva tarea</button>
+    <div class="task-input hidden">
+      <input type="text" id="task-title" placeholder="Título de la tarea">
+      <textarea id="task-description" placeholder="Descripción de la tarea"></textarea>
+      <div class="input-row">
+        <select id="category">
+          <option value="Urgente">Urgente</option>
+          <option value="Normal">Normal</option>
+          <option value="Baja">Baja</option>
+        </select>
+        <input type="date" id="due-date">
+      </div>
+      <div class="time-inputs">
+        <div class="time-group"><label for="task-start-time">De:</label><input type="time" id="task-start-time"></div>
+        <div class="time-group"><label for="task-end-time">A:</label><input type="time" id="task-end-time"></div>
+      </div>
+      <button id="add-task">Añadir tarea</button>
+    </div>
+    <button id="view-toggle-btn" class="secondary-btn">Ver Tareas Completadas</button>
+    <div class="task-list">
+      <div class="task-category" id="in-progress-column">
+        <h2>En progreso</h2>
+        <div class="tasks" id="in-progress-tasks"></div>
+      </div>
+      <div class="task-category" id="completed-column">
+        <h2>Completadas</h2>
+        <div class="tasks" id="completed-tasks"></div>
+      </div>
+    </div>
+    <button id="export-btn">Exportar Tareas a Excel (.csv)</button>
+</div>
+  
+  <script src="js/app.js"></script>
+</body>
+
+</html>
